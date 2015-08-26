@@ -1,0 +1,18 @@
+102 00 00 00 00 01 #posicao de memoria com o valor 1, para decrementar o contador
+103 00 00 00 00 09 #cria um contador para fazer a operacao 10 vezes
+104 00 00 00 00 0A #coloca valor 10 (gravidade) na memoria
+105 00 00 00 00 00 #inicia posicao de memoria que recebera a distancia, o valor de x do exercicio 
+106 00 00 00 00 00 #posicao onde ficarao os k's do programa
+107 00 00 00 00 02 #armazena o valor dois na posicao 107, para fazer as divisoes 
+108 00 00 00 00 00 #valor que sempre armazena o y, no caso, o que tem a raiz a calcular 
+
+000 09 104 0B 105 #copia o valor de 104 para MQ e multiplica pelo valor de distancia 
+001 0A 000 21 108 #copia o valor de MQ para AC e copia na memoria
+002 0C 107 0A 000 #divide o valor em AC (multipli) e passa o quociente para ela
+003 21 106 01 108 #copia o atual valor de k para sua posicao e passa o valor de y para o AC (inicio do loop)
+004 0C 106 0A 000 #divide y por k, e puxa seu valor para o AC, para posterior operacao
+005 05 106 0C 107 #soma o que esta no AC (y/k) com o atual k e divide por 2
+006 0A 000 21 106 #copia o valor do quociente para AC e copia na sua posicao
+007 01 103 06 102 #copia o valor do contador para o AC e subtrai 1
+008 21 103 10 003 #copia o valor do contador para a memoria e testa
+009 01 106 0D 400 #copia o valor de k para a memoria e encerra
