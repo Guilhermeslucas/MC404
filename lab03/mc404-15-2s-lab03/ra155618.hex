@@ -1,0 +1,19 @@
+030 00 00 00 00 01 #valor que ira aumentando para perporrer vetor 
+031 00 00 00 00 00 #valor que armazena como esta o contador do loop
+032 00 00 00 00 00 #valor inicial da soma e para salvar a proxima
+033 00 00 00 00 01 #valor 1
+
+000 01 3FF 06 033 #le o tamanho dos vetores e subtri 1, para loop
+001 21 031 01 3FD #armazena o valor em seu campo e carrega posicao do vetor
+002 13 003 01 3FE #coloca na posicao para loop e carrega
+003 12 004 09 000 #posicao do segundo vetor e carreha em MQ
+004 0B 000 0A 000 #multiplica pela posicao do segundo vetor e traz em AC 
+005 05 032 21 032 #soma com o atual da soma e guarda 
+006 01 3FD 05 030 #carrega posicao do vetor e soma contador
+007 13 003 01 3FE #altera posicao e carrega do segundo vetor
+008 05 030 12 004 #soma o atual contador e troca a posicao da memoria
+009 01 030 05 033 #carrega o contador de pular a memoria e soma 1
+00A 21 030 01 031 #guarda na posicao adequada e carrega contador 
+00B 06 033 21 031 #subtrai 1 e guarda 
+00C 10 003 01 032 #da o salto condicional e carrega soma em AC 
+00D 0D 400 00 000 #pula para posicao 400 e encerra o programa
